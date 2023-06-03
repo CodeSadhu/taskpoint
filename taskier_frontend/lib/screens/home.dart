@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:carded/carded.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,6 +10,7 @@ import 'package:taskier/utils/assets.dart';
 import 'package:taskier/utils/colors.dart';
 import 'package:taskier/utils/constants.dart';
 import 'package:taskier/utils/styles.dart';
+import 'package:taskier/widgets/task_filter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -65,71 +68,62 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: size.height * 0.02,
               ),
-              TaskFilterSection(size: size)
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TaskFilterSection extends StatelessWidget {
-  const TaskFilterSection({
-    super.key,
-    required this.size,
-  });
-
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    // CommonProvider _commonProvider =
-    //     Provider.of<CommonProvider>(context, listen: false);
-
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(
-          Constants.taskStatus.length,
-          (index) {
-            String task = Constants.taskStatus[index].taskStatus;
-
-            return Consumer<CommonProvider>(
-              builder: (context, provider, _) {
-                int activeIndex = provider.taskFilterIndex;
-                for (TaskFilter filter in Constants.taskStatus) {
-                  filter.selected = false;
-                }
-                Constants.taskStatus[activeIndex].selected = true;
-                bool selected = Constants.taskStatus[index].selected;
-                return GestureDetector(
-                  onTap: () {
-                    provider.switchTaskFilter(index);
-                  },
-                  child: CardyContainer(
-                    shadowColor: Colors.transparent,
-                    margin: EdgeInsets.all(size.width * 0.02),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 18,
-                      vertical: 12.5,
-                    ),
-                    color: selected
-                        ? ColorPalette.white
-                        : ColorPalette.lightPrimary,
-                    borderRadius: BorderRadius.circular(30),
-                    child: Text(
-                      task,
-                      style: Styles.smallBodyStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
+              TaskFilterSection(size: size),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              Container(
+                // height: size.height * 0.4,
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                            tileMode: TileMode.mirror,
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            stops: [
+                              0.0,
+                              0.1,
+                              0.5,
+                              0.8,
+                            ],
+                            colors: [
+                              ColorPalette.primary.withOpacity(0.1),
+                              ColorPalette.primary.withOpacity(0.3),
+                              ColorPalette.primary.withOpacity(0.6),
+                              ColorPalette.primary,
+                            ]
+                            // stops: [
+                            //   0.0,
+                            //   0.02,
+                            //   0.6,
+                            //   0.7,
+                            //   0.8,
+                            //   0.9,
+                            // ],
+                            // colors: [
+                            //   ColorPalette.lightPrimary,
+                            //   ColorPalette.lightGrey,
+                            //   ColorPalette.primary,
+                            //   ColorPalette.primary,
+                            //   ColorPalette.primary,
+                            //   ColorPalette.primary,
+                            // ],
+                            ),
+                      ),
+                      height: size.height * 0.2,
+                      width: size.width * 0.4,
+                      child: Column(
+                        children: [],
                       ),
                     ),
-                  ),
-                );
-              },
-            );
-          },
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
