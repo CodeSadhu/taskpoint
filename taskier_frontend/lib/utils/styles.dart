@@ -8,11 +8,13 @@ class Styles {
     FontWeight? fontWeight,
     FontStyle? fontStyle,
     Color? color,
+    double? lineHeight,
   }) {
     return TextStyle(
       fontSize: fontSize ?? 20,
       fontWeight: fontWeight ?? FontWeight.w400,
       color: color,
+      height: lineHeight,
     );
   }
 
@@ -21,11 +23,13 @@ class Styles {
     FontWeight? fontWeight,
     FontStyle? fontStyle,
     Color? color,
+    double? lineHeight,
   }) {
     return TextStyle(
       fontSize: fontSize ?? 16,
       fontWeight: fontWeight ?? FontWeight.w400,
       color: color,
+      height: lineHeight,
     );
   }
 
@@ -34,11 +38,13 @@ class Styles {
     FontWeight? fontWeight,
     FontStyle? fontStyle,
     Color? color,
+    double? lineHeight,
   }) {
     return TextStyle(
       fontSize: fontSize ?? 16,
       fontWeight: fontWeight ?? FontWeight.w500,
       color: color,
+      height: lineHeight,
     );
   }
 
@@ -47,11 +53,13 @@ class Styles {
     FontWeight? fontWeight,
     FontStyle? fontStyle,
     Color? color,
+    double? lineHeight,
   }) {
     return TextStyle(
       fontSize: fontSize ?? 32,
       fontWeight: fontWeight ?? FontWeight.w600,
       color: color,
+      height: lineHeight,
     );
   }
 
