@@ -10,6 +10,8 @@ class ColorPalette {
   static Color successGreen = Colors.green.shade600;
 
   static const Color primary = Color(0xFF9C2CF3);
+  static const Color lightPrimary = Color(0xFFE5EAFC);
   static const Color lightGrey = Color(0xFFD8DEF3);
   static const Color bgGrey = Color(0xFFE5E5E5);
+  static const Color textGrey = Color(0xFF2E3A59);
 }

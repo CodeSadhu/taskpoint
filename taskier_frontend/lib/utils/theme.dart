@@ -33,6 +33,7 @@ class AppTheme {
       brightness: Brightness.light,
       primary: ColorPalette.primary,
       secondary: ColorPalette.lightGrey,
+      tertiary: ColorPalette.textGrey,
     ),
     scaffoldBackgroundColor: ColorPalette.bgGrey,
     appBarTheme: AppBarTheme(
