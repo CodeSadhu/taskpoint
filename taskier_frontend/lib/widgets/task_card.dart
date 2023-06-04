@@ -9,9 +9,11 @@ class TaskDetailsCard extends StatelessWidget {
   const TaskDetailsCard({
     super.key,
     required this.size,
+    required this.text,
   });
 
   final Size size;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +44,12 @@ class TaskDetailsCard extends StatelessWidget {
               horizontal: size.width * 0.06,
               vertical: size.height * 0.03,
             ),
-            height: size.height * 0.25,
-            width: size.width * 0.5,
-            child: buildCardContent(),
+            height: size.height * 0.2,
+            width: size.width * 0.4,
+            child: TaskCardContent(
+              size: size,
+              text: text,
+            ),
           ),
           Positioned(
             bottom: -60,
@@ -63,7 +68,7 @@ class TaskDetailsCard extends StatelessWidget {
     );
   }
 
-  Column buildCardContent() {
+  Column buildCardContent({required String text}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -78,7 +83,7 @@ class TaskDetailsCard extends StatelessWidget {
               width: size.width * 0.02,
             ),
             Text(
-              'Task 1',
+              'Task',
               style: Styles.bodyStyle(
                 fontWeight: FontWeight.w600,
                 color: ColorPalette.white,
@@ -88,6 +93,18 @@ class TaskDetailsCard extends StatelessWidget {
         ),
         SizedBox(
           height: size.height * 0.02,
+        ),
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: size.width * 0.4,
+          ),
+          child: Text(
+            text,
+            style: Styles.bodyStyle(
+              fontWeight: FontWeight.w600,
+              color: ColorPalette.white,
+            ),
+          ),
         ),
       ],
     );
@@ -109,6 +126,61 @@ class TaskDetailsCard extends StatelessWidget {
         ColorPalette.primary.withOpacity(0.5),
         ColorPalette.primary.withOpacity(0.8),
         ColorPalette.primary,
+      ],
+    );
+  }
+}
+
+class TaskCardContent extends StatelessWidget {
+  const TaskCardContent({
+    super.key,
+    required this.size,
+    required this.text,
+  });
+
+  final Size size;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SvgPicture.asset(
+              TaskAsset.taskIdeaIcon,
+              height: size.height * 0.05,
+            ),
+            SizedBox(
+              width: size.width * 0.02,
+            ),
+            Text(
+              'Task',
+              style: Styles.bodyStyle(
+                fontWeight: FontWeight.w600,
+                color: ColorPalette.white,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: size.height * 0.02,
+        ),
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: size.width * 0.4,
+          ),
+          child: Text(
+            text,
+            overflow: TextOverflow.ellipsis,
+            style: Styles.bodyStyle(
+              fontWeight: FontWeight.w600,
+              color: ColorPalette.white,
+            ),
+          ),
+        ),
       ],
     );
   }
