@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskier/utils/colors.dart';
 
 class Styles {
   Styles._();
@@ -80,6 +81,15 @@ class Styles {
       contentPadding: contentPadding,
       hintText: hint,
       hintStyle: hintStyle,
+    );
+  }
+
+  static UnderlineInputBorder inputBorder() {
+    return const UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: ColorPalette.white,
+        style: BorderStyle.solid,
+      ),
     );
   }
 }
