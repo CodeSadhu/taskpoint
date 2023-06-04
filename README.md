@@ -19,8 +19,8 @@ TaskPoint is a powerful and user-friendly mobile app designed to simplify produc
 
 To get started with TaskPoint, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/TaskPoint.git`
-2. Navigate to the project folder: `cd TaskPoint`
+1. Clone the repository: `git clone https://github.com/CodeSadhu/taskpoint.git`
+2. Navigate to the project folder: `cd TaskPoint/taskier_frontend`
 3. Install dependencies: `flutter pub get`
 4. Run the app: `flutter run`
 
