@@ -1,4 +1,4 @@
-![TaskPoint Logo]([TaskPoint Logo.png](https://github.com/CodeSadhu/taskpoint/blob/b25dd5c7bd143a3a97bf60ec394a02d0eca101c4/TaskPoint%20Logo.png))
+![TaskPoint Logo](https://raw.githubusercontent.com/CodeSadhu/taskpoint/main/TaskPoint%20Logo.png))
 
 # Welcome to TaskPoint, your path to effortless task management!  🚀
 TaskPoint is a powerful and user-friendly mobile app designed to simplify productivity and revolutionize task management. With TaskPoint, effortlessly create and manage your tasks, gain a comprehensive overview of your to-do list, and enjoy a clutter-free interface that keeps you focused and productive. Experience the ease and efficiency of TaskPoint as it intelligently sorts and prioritizes your tasks, helping you stay organized and achieve more with every day. Streamline your productivity journey with TaskPoint and unlock your full potential.
